@@ -1,0 +1,118 @@
+@model IEnumerable<Contact>
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="page-title" data-aos="fade">
+    <div class="heading">
+        <div class="container">
+            <div class="row d-flex justify-content-center text-center">
+                <div class="col-lg-8">
+                    <h1>İLETİŞİM</h1>
+                    <p class="mb-0">Bizimle fikirlerinizi paylaşın.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section id="contact" class="contact section">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+            <!-- Konum Bilgisi -->
+            <div class="col-lg-4">
+                <div class="info-item d-flex align-items-center">
+                    <i class="bi bi-geo-alt flex-shrink-0" id="location-icon"
+                        style="cursor: pointer;"></i>
+                    <div class="ms-3">
+                        <h3>KONUM</h3>
+                        <p>İstanbul, Nişantaşı Üniversitesi, Acunmedya Akademi</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Telefon Bilgisi -->
+            <div class="col-lg-4" style="">
+                <div class="info-item d-flex align-items-center">
+                    <i class="bi bi-telephone flex-shrink-0"></i>
+                    <div>
+                        <h3>Telefon</h3>
+                        <p>+90 0528 548 54 89</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Email Bilgisi -->
+            <div class="col-lg-4">
+                <div class="info-item d-flex align-items-center">
+                    <i class="bi bi-envelope flex-shrink-0"></i>
+                    <div>
+                        <h3>Email</h3>
+                        <p>info@popcornviews.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!-- İletişim Formu -->
+        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
+            <div class="row gy-4">
+                <div class="col-md-6">
+                    <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                </div>
+
+                <div class="col-md-6">
+                    <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                </div>
+
+                <div class="col-md-12">
+                    <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                </div>
+
+                <div class="col-md-12">
+                    <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                    <div class="loading">Loading</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">Your message has been sent. Thank you!</div>
+                    <button type="submit">Gönder</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- Konum Modal -->
+
+<div class="modal fade" id="locationModal" tabindex="-1" aria-labelledby="locationModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background-color: black; color: white; border: 1px solid white;">
+            <div class="modal-header">
+                <h5 class="modal-title" id="locationModalLabel">Konum</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                    style="filter: invert(1);"></button>
+            </div>
+            <div class="modal-body">
+                <iframe
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD1VnYC6EugmolDY9RjsZ77TeXstyj0288&q=Acunmedya+Akademi&center=41.1193622,29.0099142&zoom=15"
+                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary"
+                    style="background-color: #c59b00; border-color: #c59b00;" data-bs-dismiss="modal">Kapat</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+    // İkona tıklanıldığında modal açılır
+    document.getElementById('location-icon').addEventListener('click', function () {
+        var modal = new bootstrap.Modal(document.getElementById('locationModal'));
+        modal.show();
+    });
+</script>

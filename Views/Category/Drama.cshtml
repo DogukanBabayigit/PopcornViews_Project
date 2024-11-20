@@ -1,0 +1,45 @@
+@model IEnumerable<Movie>
+@{
+    ViewData["Title"] = "Drama";
+}
+
+<div class="page-title" data-aos="fade">
+    <div class="heading">
+        <div class="container">
+            <div class="row d-flex justify-content-center text-center">
+                <div class="col-lg-8">
+                    <h1>DRAM</h1>
+                    <p class="mb-0">Hayatın en derin duygularını keşfedeceğiniz dram filmleriyle ruhunuza dokunun. İnsan
+                        ilişkileri, mücadeleler ve içsel yolculuklarla dolu bu yapımlar, izleyiciyi hikayenin bir
+                        parçası haline getiriyor.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section id="gallery" class="gallery section">
+    <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4 justify-content-center">
+            @foreach (var item in Model)
+            {
+                <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+                    <div class="gallery-item h-100">
+                        <img src="@item.MovieImgURL" class="img-fluid" alt="@item.MovieName"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                        <div class="gallery-links d-flex align-items-center justify-content-center">
+                            <a href="@item.MovieImgURL" title="@item.MovieName" class="glightbox preview-link">
+                                <i class="bi bi-arrows-angle-expand"></i>
+                            </a>
+                            <a asp-action="Index" asp-controller="Detay" asp-route-id="@item.MovieId" class="details-link">
+                                <i class="bi bi-link-45deg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- End Gallery Item -->
+            }
+        </div>
+    </div>
+</section>

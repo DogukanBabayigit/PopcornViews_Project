@@ -1,0 +1,38 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>PopcornViews</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  @await Html.PartialAsync("_StylesPartial")
+
+  <!-- =======================================================
+  * Template Name: PhotoFolio
+  * Template URL: https://bootstrapmade.com/photofolio-bootstrap-photography-website-template/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+  @await Html.PartialAsync("_HeaderPartial")
+  <main class="main">
+  @RenderBody()
+    <!-- Hero Section -->
+  </main>
+  @await Html.PartialAsync("_FooterPartial")
+  <!-- Scroll Top -->
+  @await Html.PartialAsync("_ScrollTopPartial")
+  <!-- Preloader -->
+  @await Html.PartialAsync("_PreloaderPartial")
+  @await Html.PartialAsync("_ScriptsPartial")
+
+</body>
+
+</html>

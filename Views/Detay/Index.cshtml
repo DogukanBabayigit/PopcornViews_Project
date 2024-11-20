@@ -1,0 +1,120 @@
+@model Movie
+@{
+    ViewData["Title"] = "Index";
+}
+<!-- Gri Kalın Çizgi -->
+<div class="divider"></div>
+
+<section id="gallery-details" class="gallery-details section">
+    <div class="container" data-aos="fade-up">
+        <!-- Video ve Çizgi -->
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="page-title">
+                    <div class="heading">
+                        <div class="movie-video">
+                            <iframe width="100%" height="500" src="@Model.MovieURL" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <!-- Beyaz Çizgi -->
+                <div class="white-divider"></div>
+            </div>
+        </div>
+
+        <!-- Açıklama ve Bilgiler -->
+        <div class="row justify-content-between gy-4 mt-4">
+            <div class="col-lg-8">
+                <div class="portfolio-description">
+                    <h1>@Model.MovieName?.ToUpper(new System.Globalization.CultureInfo("tr-TR"))</h1>
+                    <br>
+                    <p class="mb-0">@Model.AboutMovie</p>
+
+                    <!-- Bilgiler -->
+                    <div style="margin-top: 100px;" class="row movie-details">
+                        <div class="col-lg-2">
+                            <strong>IMDb</strong>
+                            <p> <i class="bi bi-star-fill"></i> @Model.ImdbPoint</p>
+                        </div>
+                        <div class="col-lg-2">
+                            <strong>Film Süresi</strong>
+                            <p>@Model.MovieDuration dk</p>
+                        </div>
+                        <div class="col-lg-2">
+                            <strong>Yönetmen</strong>
+                            <p>@Model.Director</p>
+                        </div>
+                        <div class="col-lg-2">
+                            <strong>Yazar</strong>
+                            <p>@Model.Writer</p>
+                        </div>
+                        <div class="col-lg-2">
+                            <strong>Star Oyuncu</strong>
+                            <p>@Model.Star</p>
+                        </div>
+                        <div class="col-lg-2">
+                            <strong>Nereden Izlenir?</strong>
+                            <a href="@Model.WatchUrl" target="_blank">
+                                <img src="~/ui/img/justwatch-icon.png" alt="Just Watch Icon"
+                                    style="width:20px; height:20px; margin-right:5px;">
+                                Just Watch
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Film Resmi -->
+            <div class="col-lg-3">
+                <div class="portfolio-info">
+                    <ul>
+                        <img src="@Model.MovieImgURL" alt="" class="movie-image">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<style>
+    /* Resim Stili */
+    .movie-image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    /* IMDb Yıldız Rengi */
+    .bi-star-fill {
+        color: gold;
+        margin-left: 5px;
+    }
+
+    /* Film Bilgi Listesi */
+    .movie-details {
+        margin-top: 20px;
+        /* Açıklama ile bilgiler arasında 20px boşluk */
+    }
+
+    .movie-details .col-lg-6 {
+        display: flex;
+        /* Yan yana hizalama için */
+        align-items: center;
+        /* Dikey hizalama */
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .white-divider {
+        width: 100%;
+        height: 5px;
+        /* Kalınlık */
+        background-color: white;
+        /* Beyaz renk */
+        margin: 20px 0;
+        /* Üst ve alt boşluk */
+    }
+</style>

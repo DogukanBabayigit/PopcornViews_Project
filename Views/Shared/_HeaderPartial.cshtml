@@ -1,0 +1,72 @@
+﻿<header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+
+        <a asp-area="Views" asp-controller="Home" asp-action="Index"
+            class="logo d-flex align-items-center me-auto me-xl-0">
+            <i class="bi bi-film" style="color: #c59b00;"></i>
+            <h1 class="sitename">PopcornViews</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+            <ul>
+                <li><a asp-area="Views" asp-controller="Home" asp-action="Index">Ana Sayfa</a></li>
+                <li class="dropdown"><a><span>KATEGORİLER</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                    <ul>
+                        <li><a asp-controller="Category" asp-action="Aksiyon">Aksiyon</a></li>
+                        <li><a asp-controller="Category" asp-action="Komedi">Komedi</a></li>
+                        <li><a asp-controller="Category" asp-action="Drama">Dram</a></li>
+                        <li><a asp-controller="Category" asp-action="Korku">Korku</a></li>
+                        <li><a asp-controller="Category" asp-action="BilimKurgu">Bilim Kurgu</a></li>
+                    </ul>
+                </li>
+                <li><a asp-controller="Iletisims" asp-action="Index">İLETİŞİM</a></li>
+                <!-- Login Modal Trigger -->
+                <li><a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">GİRİŞ</a></li>
+            </ul>
+            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+        <div class="header-social-links">
+            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
+
+    </div>
+</header>
+
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background-color: black; color: white; border:  1px solid white;">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel"><i class="bi bi-film" style="color: #c59b00;"></i>PopcornViews
+                </h5>
+                       
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                    style="filter: invert(1);"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="loginEmail" class="form-label">E-Mail</label>
+                        <input type="email" class="form-control" id="loginEmail" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="loginPassword" class="form-label">Sifre</label>
+                        <input type="password" class="form-control" id="loginPassword"
+                            placeholder="Enter your password">
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                        <label class="form-check-label" for="rememberMe">Beni Hatirla</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 mt-3"
+                        style="background-color: #c59b00; border-color: #c59b00;">Giris</button>
+                </form>
+            </div>
+            
+            ,
+        </div>
+    </div>
+</div>
